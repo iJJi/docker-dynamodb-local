@@ -4,7 +4,7 @@
 # http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html
 #
 FROM java:openjdk-8-jre
-MAINTAINER Bryan Talbot <bryan.talbot@playnext.com>
+MAINTAINER Bryan Talbot
 WORKDIR /dynamodb
 EXPOSE 8000
 CMD ["/usr/bin/java", "-showversion", "-Djava.library.path=.", "-jar", "DynamoDBLocal.jar", "-dbPath", "/dynamodb_data"]
@@ -13,4 +13,4 @@ CMD ["/usr/bin/java", "-showversion", "-Djava.library.path=.", "-jar", "DynamoDB
 VOLUME ["/dynamodb_data"]
 
 # Download and install the binaries to WORKDIR
-RUN curl -sSL http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz | tar xzf -
+RUN curl -sSL http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_2014-10-07.tar.gz | tar xzf -
