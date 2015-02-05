@@ -13,4 +13,4 @@ CMD ["/usr/bin/java", "-showversion", "-Djava.library.path=.", "-jar", "DynamoDB
 VOLUME ["/dynamodb_data"]
 
 # Download and install the binaries to WORKDIR
-RUN curl -sSL http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_2014-10-07.tar.gz | tar xzf -
+RUN curl -sSL http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_2015-01-27.tar.gz | tar xzf -
