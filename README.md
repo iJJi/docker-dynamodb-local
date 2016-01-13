@@ -1,6 +1,6 @@
 A simple Dockerfile for AWS [dynamodb-local](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html)
 
-[![](https://badge.imagelayers.io/fingershock/haproxy-base:latest.svg)](https://imagelayers.io/?images=fingershock/haproxy-base:latest 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/fingershock/dynamodb-local:latest.svg)](https://imagelayers.io/?images=fingershock/dynamodb-local:latest 'Get your own badge on imagelayers.io')
 
 The dockerfile is
 
