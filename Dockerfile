@@ -5,8 +5,8 @@
 #
 FROM java:openjdk-8-jre
 MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
-WORKDIR /dynamodb
 EXPOSE 8000
+WORKDIR /dynamodb
 ENV DDB_LOCAL_VERSION=2016-01-07_1.0 \
     DDB_LOCAL_SHA256=f4d8594e08f8f1edf37eefd43206677559324ef7b8c2a50436c1bf76528cf1f1
 CMD ["/usr/bin/java", "-showversion", "-Djava.library.path=.", "-jar", "DynamoDBLocal.jar", "-dbPath", "/dynamodb_data"]
