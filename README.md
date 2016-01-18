@@ -1,17 +1,17 @@
 # docker-dynamodb-local
 
-A Dockerfile for AWS [dynamodb-local](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html) build on alpine linux so it's tiny.
+A Dockerfile for AWS [dynamodb-local](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html) built on [alpine linux](http://www.alpinelinux.org/) so it's tiny.
 
 It's on [docker-hub](https://hub.docker.com/r/fingershock/dynamodb-local/) and [github](https://github.com/iJJi/docker-dynamodb-local)
 
 ## tags and links
- * [latest, 2016-01-07_1.0 (Dockerfile)](https://github.com/iJJi/docker-dynamodb-local/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/dynamodb-local:latest.svg)](https://imagelayers.io/?images=fingershock/dynamodb-local:latest)
+ * latest, v2016-01-07_1.0 [(Dockerfile)](https://github.com/iJJi/docker-dynamodb-local/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/dynamodb-local:latest.svg)](https://imagelayers.io/?images=fingershock/dynamodb-local:latest)
 
 ## running
 
 Get list of available command line options
 ```
-docker run --rm fingershock/dynamodb-local java -jar DynamoDBLocal.jar -help
+docker run --rm fingershock/dynamodb-local -help
 usage: java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar
             [-port <port-no.>] [-inMemory] [-delayTransientStatuses]
             [-dbPath <path>][-sharedDb] [-cors <allow-list>]
