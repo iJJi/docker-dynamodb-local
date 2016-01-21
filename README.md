@@ -6,7 +6,7 @@ It's on [docker-hub](https://hub.docker.com/r/fingershock/dynamodb-local/) and [
 
 ## tags and links
  * `latest` [(Dockerfile)](https://github.com/iJJi/docker-dynamodb-local/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/dynamodb-local:latest.svg)](https://imagelayers.io/?images=fingershock/dynamodb-local:latest) [![Build Status](https://travis-ci.org/iJJi/docker-dynamodb-local.svg?branch=master)](https://travis-ci.org/iJJi/docker-dynamodb-local)
- * `2016-01-07_1.0` [(Dockerfile)](https://github.com/iJJi/docker-dynamodb-local/blob/2016-01-07_1.0/Dockerfile) [![](https://badge.imagelayers.io/fingershock/dynamodb-local:2016-01-07_1.0.svg)](https://imagelayers.io/?images=fingershock/dynamodb-local:2016-01-07_1.0) [![Build Status](https://travis-ci.org/iJJi/docker-dynamodb-local.svg?branch=2016-01-07_1.0)](https://travis-ci.org/iJJi/docker-dynamodb-local)
+ * `2015-07-16_1.0` [(Dockerfile)](https://github.com/iJJi/docker-dynamodb-local/blob/2015-07-16_1.0/Dockerfile) [![](https://badge.imagelayers.io/fingershock/dynamodb-local:2015-07-16_1.0.svg)](https://imagelayers.io/?images=fingershock/dynamodb-local:2015-07-16_1.0) [![Build Status](https://travis-ci.org/iJJi/docker-dynamodb-local.svg?branch=2015-07-16_1.0)](https://travis-ci.org/iJJi/docker-dynamodb-local)
 
 ## running
 
