@@ -1,13 +1,26 @@
-sudo: required
+branches:
+  only:
+    - master
+
 services:
-- docker
+  - docker
+
 before_install:
-- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
+before_script:
+  - repo=fingershock/dynamodb-local
+
 script:
-- docker build -t fingershock/dynamodb-local:${TRAVIS_BRANCH/master/latest} .
-- docker run --rm fingershock/dynamodb-local:${TRAVIS_BRANCH/master/latest} -help
+  - docker build -t $repo .
+  - docker run --rm $repo -help
+
 after_success:
-- docker push     fingershock/dynamodb-local:${TRAVIS_BRANCH/master/latest}
+  - tag=$(docker run --rm --entrypoint=/bin/sh $repo -c 'echo $DDB_LOCAL_VERSION')
+  - docker tag $repo $repo:$tag
+  - docker push $repo:latest
+  - docker push $repo:$tag
+
 notifications:
   slack:
     secure: T7CgwTj159ENHLY/iBGS9si+WZjbe8pq/SqS+RUiBEQv0WN0fAv8Te1cYRcOkZZWSWjQ67X8n4n8cXgaoXTORTrKpKALglBsnGqP720Jd2DeOF/K8cN09CXRP0L8JXeC8bh0ljFvB1NEDpauiPB2PSWNkxoCQQA+Brn4v0eLl7M8m9pdRBGPxxemKWn0bNtZHGrEzoyTSmzM1pOFP9Asebn706F+KT0PXvYM0Cq5ZkXqW/ZSwByoSjfDQP6WgJO83L8gWdpq5CXFltArh7pXdkg8XqzRufbOhSVlja/oTVedG6rj6Yh5/tcnhyHWqXmCuKpXn9jf86I0nGCDDmPA8XvF2MONzT92wfTjsKbtsRKaDxtSvJnI54U2FRcEusvmzxZqotu5efXOQjDRhHnFtRuMqKtt7iIZTCNxgvPd/Q/QJve6HBNiGlpIQfj+1b/1tDr3CWBMXOo41sET1BBPCJ0Fo3GUSV9l9l27YNfmXe6TZtn7aP2N1uqXr+KAWvjNVUEnmlRQdk7+686a4hsXhK+xP+yBndkgyyICkSvAZjKIivwkFhuXuQyGKsh7Och937fQ3Cxip62C21ZI7qi6ISQTD/7FOWSPGlnFF6Ty0MNVoOjrLAUhhujExKTf5mpv5OZS15hHiPQojnPSE/UGnKYFYnNxc0tlenRI3kqgwY0=
