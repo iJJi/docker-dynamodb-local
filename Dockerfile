@@ -8,8 +8,8 @@ MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
 EXPOSE 8000
 WORKDIR /dynamodb
 
-ENV DDB_LOCAL_VERSION=2016-01-07_1.0 \
-    DDB_LOCAL_SHA256=f4d8594e08f8f1edf37eefd43206677559324ef7b8c2a50436c1bf76528cf1f1
+ENV DDB_LOCAL_VERSION=2016-03-01 \
+    DDB_LOCAL_SHA256=c102d30a2f3d420fc9a4784fd7544bccdf3bc8782203ef63e3f92942c4493c93
 
 # Download and install the binaries to WORKDIR
 RUN wget -q -O dynamodb_local.tar.gz http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_${DDB_LOCAL_VERSION}.tar.gz && \
