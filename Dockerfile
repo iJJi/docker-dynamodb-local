@@ -17,6 +17,8 @@ RUN wget -q -O dynamodb_local.tar.gz http://dynamodb-local.s3-website-us-west-2.
     tar xzf dynamodb_local.tar.gz && \
     rm dynamodb_local.tar.gz
 
+RUN mkdir -p /dynamodb_data && chown nobody:nobody /dynamodb_data && chmod 0750 /dynamodb_data
+USER nobody
 # VOLUME to allow persistence / access of raw database files
 VOLUME /dynamodb_data
 ENTRYPOINT ["/usr/bin/java", "-Djava.library.path=./DynamoDBLocal_lib", "-jar", "DynamoDBLocal.jar"]
