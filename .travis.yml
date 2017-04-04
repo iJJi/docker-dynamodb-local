@@ -10,9 +10,11 @@ before_install:
 
 before_script:
   - repo=fingershock/dynamodb-local
+  - git_rev=$(git rev-parse --short HEAD)
+  - build_date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
 script:
-  - docker build -t $repo .
+  - docker build -t $repo --build-arg VCS_REF=$git_rev --build-arg BUILD_DATE=$build_date .
   - docker run --rm $repo -help
 
 after_success:
