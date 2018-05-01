@@ -8,8 +8,8 @@ MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
 EXPOSE 8000
 WORKDIR /dynamodb
 
-ENV DDB_LOCAL_VERSION=2017-02-16 \
-    DDB_LOCAL_SHA256=d79732d7cd6e4b66fbf4bb7a7fc06cb75abbbe1bbbfb3d677a24815a1465a0b2
+ENV DDB_LOCAL_VERSION=2018-04-11 \
+    DDB_LOCAL_SHA256=4afae454157256e3525df91b5ae2c6b6683ce05f92284e79335b2ac8e2e53762
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE

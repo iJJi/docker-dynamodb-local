@@ -5,7 +5,7 @@ A Dockerfile for AWS [dynamodb-local](http://docs.aws.amazon.com/amazondynamodb/
 It's on [docker-hub](https://hub.docker.com/r/fingershock/dynamodb-local/) and [github](https://github.com/iJJi/docker-dynamodb-local)
 
 ## tags and links
- * `latest`, `2017-02-16` [(Dockerfile)](https://github.com/iJJi/docker-dynamodb-local/blob/master/Dockerfile) [![](https://images.microbadger.com/badges/version/fingershock/dynamodb-local.svg)](https://microbadger.com/images/fingershock/dynamodb-local "Get your own version badge on microbadger.com") [![Build Status](https://travis-ci.org/iJJi/docker-dynamodb-local.svg?branch=master)](https://travis-ci.org/iJJi/docker-dynamodb-local)
+ * `latest`, `2018-04-11` [(Dockerfile)](https://github.com/iJJi/docker-dynamodb-local/blob/master/Dockerfile) [![](https://images.microbadger.com/badges/version/fingershock/dynamodb-local.svg)](https://microbadger.com/images/fingershock/dynamodb-local "Get your own version badge on microbadger.com") [![Build Status](https://travis-ci.org/iJJi/docker-dynamodb-local.svg?branch=master)](https://travis-ci.org/iJJi/docker-dynamodb-local)
 
 ## running
 
