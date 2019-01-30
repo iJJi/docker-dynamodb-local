@@ -3,7 +3,7 @@
 #
 # http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html
 #
-FROM frolvlad/alpine-oraclejdk8:slim
+FROM openjdk:8-alpine
 MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
 EXPOSE 8000
 WORKDIR /dynamodb
