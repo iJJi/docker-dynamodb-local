@@ -3,7 +3,7 @@
 #
 # http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html
 #
-FROM openjdk:8-alpine
+FROM openjdk:8-slim
 MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
 EXPOSE 8000
 WORKDIR /dynamodb
@@ -25,14 +25,15 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.version=$DDB_LOCAL_VERSION
 
 # Download and install the binaries to WORKDIR
-RUN apk add --no-cache openssl && \
+RUN apt-get update && \
+    apt-get install --yes wget && \
     wget -q -O dynamodb_local.tar.gz https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_${DDB_LOCAL_VERSION}.tar.gz && \
     echo "${DDB_LOCAL_SHA256}  dynamodb_local.tar.gz" | sha256sum -c - && \
     tar xzf dynamodb_local.tar.gz && \
     rm dynamodb_local.tar.gz && \
-    apk del openssl
+    apt-get clean
 
-RUN mkdir -p /dynamodb_data && chown nobody:nobody /dynamodb_data && chmod 0750 /dynamodb_data
+RUN mkdir -p /dynamodb_data && chown nobody:nogroup /dynamodb_data && chmod 0750 /dynamodb_data
 USER nobody
 # VOLUME to allow persistence / access of raw database files
 VOLUME /dynamodb_data
