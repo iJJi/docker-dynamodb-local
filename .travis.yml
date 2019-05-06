@@ -16,8 +16,6 @@ before_script:
 script:
   - docker build -t $repo --build-arg VCS_REF=$git_rev --build-arg BUILD_DATE=$build_date .
   - docker run --rm $repo -help
-
-after_success:
   - tag=$(docker run --rm --entrypoint=/bin/sh $repo -c 'echo $DDB_LOCAL_VERSION')
   - docker tag $repo $repo:$tag
   - docker push $repo:latest
